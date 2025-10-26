@@ -1,0 +1,21 @@
+{
+  "name": "cloud-run-demo-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yoshimitakuto/cloud-run-demo-app.git",
+  "author": "YoshimiTakuto <takuto.yoshimi@ncdc.co.jp>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
+  },
+  "devDependencies": {
+    "@hono/node-server": "^1.19.5",
+    "@types/node": "^24.9.1",
+    "hono": "^4.10.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
