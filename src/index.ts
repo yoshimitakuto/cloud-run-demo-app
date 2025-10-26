@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { Hono } from "hono";
 import { serve } from "@hono/node-server";
 import { helloWorld } from "./functions/hello-world";
@@ -12,7 +13,7 @@ app.post("/sum/:a/:b", (c) => {
   return c.json(sum({ a: Number(params.a), b: Number(params.b) }));
 });
 
-const port = 3001;
+const port = Number(process.env.DEV_PORT) || 3001;
 
 serve({ fetch: app.fetch, port }, (info) => {
   console.log(`Server running on http://localhost:${info.port}`);
