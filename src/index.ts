@@ -12,7 +12,7 @@ app.post("/sum/:a/:b", (c) => {
   return c.json(sum({ a: Number(params.a), b: Number(params.b) }));
 });
 
-const port = Number(process.env.PORT) || 8080;
+const port = 3001;
 
 serve({ fetch: app.fetch, port }, (info) => {
   console.log(`Server running on http://localhost:${info.port}`);
